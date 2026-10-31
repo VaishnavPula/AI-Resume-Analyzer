@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Analysis History{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">YOUR LOCAL RECORDS</p><h1>Analysis history</h1><p>Recent resume analysis summaries stored in your local SQLite database.</p></section>
+<section class="panel table-panel">
+{% if analyses %}
+<div class="table-wrap"><table><thead><tr><th>Resume</th><th>Score</th><th>Job similarity</th><th>Date</th><th>Report</th></tr></thead><tbody>
+{% for item in analyses %}<tr><td>{{ item.filename }}</td><td><b>{{ item.score }}/100</b></td><td>{{ item.match_score }}%</td><td>{{ item.created_at }}</td><td><a href="{{ url_for('report', analysis_id=item.id) }}">Download</a></td></tr>{% endfor %}
+</tbody></table></div>
+{% else %}<p>No analyses yet. <a href="{{ url_for('analyze') }}">Analyze your first resume</a>.</p>{% endif %}
+</section>
+{% endblock %}

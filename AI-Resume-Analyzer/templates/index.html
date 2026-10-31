@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}AI Resume Analyzer | Home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">SMARTER CAREER PREPARATION</p>
+    <h1>Make your resume<br><span>job-ready.</span></h1>
+    <p class="lead">Upload your resume, compare it with a job description, discover skill gaps, and get practical improvement tips.</p>
+    <a class="button" href="{{ url_for('analyze') }}">Analyze My Resume →</a>
+  </div>
+  <div class="hero-card">
+    <div class="mock-top"><span>Resume analysis</span><span class="status">● Complete</span></div>
+    <div class="mock-score">82<span>/100</span></div>
+    <div class="progress"><i style="width:82%"></i></div>
+    <div class="mock-row"><span>Skills match</span><b>Good</b></div>
+    <div class="mock-row"><span>Projects</span><b>Review</b></div>
+    <div class="mock-row"><span>Keywords</span><b>Strong</b></div>
+    <p class="mock-note">Illustrative preview — actual results are calculated from your uploaded resume.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-heading"><p class="eyebrow">WHAT YOU GET</p><h2>Everything you need to improve</h2></div>
+  <div class="feature-grid">
+    <article class="feature"><div class="icon">⌕</div><h3>Resume parsing</h3><p>Extract readable text and identify skills from PDF and DOCX resumes.</p></article>
+    <article class="feature"><div class="icon">◎</div><h3>Job matching</h3><p>Compare resume content with a job description using TF-IDF and cosine similarity.</p></article>
+    <article class="feature"><div class="icon">↗</div><h3>Actionable feedback</h3><p>See missing skills, a transparent score, and practical suggestions.</p></article>
+  </div>
+</section>
+{% endblock %}

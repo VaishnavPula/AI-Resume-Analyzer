@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Analyze Resume{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">RESUME REVIEW</p><h1>Analyze your resume</h1><p>Upload a PDF or DOCX file and paste the job description you are targeting.</p></section>
+<form class="form-card" action="{{ url_for('analyze') }}" method="POST" enctype="multipart/form-data">
+  <label for="resume">Resume file <span>PDF or DOCX · Max 5 MB</span></label>
+  <input id="resume" name="resume" type="file" accept=".pdf,.docx" required>
+  <label for="job_description">Job description</label>
+  <textarea id="job_description" name="job_description" rows="9" placeholder="Paste the complete job description here..." required></textarea>
+  <button class="button" type="submit">Analyze Resume →</button>
+  <p class="small-note">Your uploaded file is removed from the server after analysis. Only summary results are stored in the local database.</p>
+</form>
+{% endblock %}
